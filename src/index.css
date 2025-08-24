@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Barlow', sans-serif;
+}
+
+@theme {
+  --color-grayish_blue: hsl(217, 19%, 38%);
+  --color-dark_grayish_blue: hsl(217, 19%, 24%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-dark_navy: #0c0e18;
+  --color-line_color: #4e5a73;
+  --color-light_white: #ffffff0d;
+  --color-h1_clr: #d2d8f9;
+
+  --font-family-barlow: 'Barlow', sans-serif;
+  --font-family-barlow_c: 'Barlow Condensed', sans-serif;
+  --font-family-belle: 'Bellefair', sans-serif;
+
+  --bg-desktop-hero: url('/src/assets/background-home-desktop.jpg');
+  --bg-mobile-hero: url('/src/assets/background-home-mobile.jpg');
+  --bg-tablet-hero: url('/src/assets/background-home-tablet.jpg');
+
+  --bg-desktop-destination: url('/src/assets/background-destination-desktop.jpg');
+  --bg-mobile-destination: url('/src/assets/background-destination-mobile.jpg');
+  --bg-tablet-destination: url('/src/assets/background-destination-tablet.jpg');
+
+  --bg-desktop-technology: url('/src/assets/background-technology-desktop.jpg');
+  --bg-mobile-technology: url('/src/assets/background-technology-mobile.jpg');
+  --bg-tablet-technology: url('/src/assets/background-technology-tablet.jpg');
+
+  --bg-desktop-crew: url('/src/assets/background-crew-desktop.jpg');
+  --bg-mobile-crew: url('/src/assets/background-crew-mobile.jpg');
+  --bg-tablet-crew: url('/src/assets/background-crew-tablet.jpg');
+}
+
+
+@layer base {
+  .container {
+    max-width: 80rem; /* equivalent to max-w-7xl */
+    margin-left: auto; /* mx-auto */
+    margin-right: auto;
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem; /* sm:px-6 */
+      padding-right: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem; /* lg:px-8 */
+      padding-right: 2rem;
+    }
+  }
+}
