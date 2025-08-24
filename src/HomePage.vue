@@ -1,5 +1,11 @@
 <script setup lang="ts">
+  // import { useRoute } from 'vue-router';
 
+  // const route = useRoute();
+
+  // const isActive = (name: string) => {
+  //   return route.name === name;
+  // };
 </script>
 
 
@@ -11,6 +17,12 @@
   outer space and not hover kind of on the edge of it. Well sit back, and relax
   because we’ll give you a truly out of this world experience!
   </p>
+
+  <button>
+    <router-link to="/destination">
+      Explore
+    </router-link>
+  </button>
 </template>
 
 

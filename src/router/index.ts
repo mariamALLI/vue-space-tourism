@@ -3,6 +3,9 @@ import HomePage from '@/HomePage.vue'
 import DestinationMoon from '@/components/destination/DestinationMoon.vue'
 import CrewCommander from '@/components/crew/CrewCommander.vue'
 import TechnologyVehicle from '@/components/technology/TechnologyVehicle.vue'
+import DestinationEuropa from '@/components/destination/DestinationEuropa.vue'
+import DestinationMars from '@/components/destination/DestinationMars.vue'
+import DestinationTitan from '@/components/destination/DestinationTitan.vue'
 
 
 const router = createRouter({
@@ -10,6 +13,9 @@ const router = createRouter({
   routes: [
     { path: '/', component: HomePage },
     { path: '/destination', component: DestinationMoon },
+    { path: '/destination/mars', component: DestinationMars },
+    { path: '/destination/europa', component: DestinationEuropa },
+    { path: '/destination/titan', component: DestinationTitan },
     { path: '/crew', component: CrewCommander },
     { path: '/technology', component: TechnologyVehicle },
   ],
