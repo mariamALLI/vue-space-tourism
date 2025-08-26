@@ -19,42 +19,46 @@ function toggleMenu() {
 
 <template>
   <nav class="fixed top-0 w-full z-50">
-    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <div
+      class="flex justify-between items-center px-6 pt-6 md:px-10 md:pt-8 lg:px-12 lg:pt-10 w-full"
+    >
       <!-- logo -->
       <router-link to="/">
         <img
           src="@/assets/shared/logo.svg"
           alt="Logo"
-          class="h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12"
+          class="h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 md:mt-[-1rem] lg:mt-[-1.25rem]"
         />
       </router-link>
 
       <!-- line for desktop -->
-      <div class="hidden lg:block flex-1 max-w-[473px] h-[1px] bg-white/20 ml-8 -mr-8"></div>
+      <div
+        class="hidden lg:block flex-1 max-w-[600px] h-[1px] bg-white/20 ml-8 -mr-10 z-[50] mt-[-0.5rem]"
+      ></div>
 
       <!-- hamburger menu for mobile -->
-      <div class="md:hidden z-50">
-        <button @click="toggleMenu" class="text-white focus:outline-none">
+      <div class="md:hidden z-[60]">
+        <button @click="toggleMenu" class="text-white focus:outline-none relative z-[60]">
           <img
             v-if="isOpen"
             src="@/assets/shared/icon-close.svg"
             alt="Close Menu"
-            class="h-8 w-8"
+            class="h-6 w-6"
           />
-          <img v-else src="@/assets/shared/icon-hamburger.svg" alt="Open Menu" class="h-8 w-8" />
+          <img v-else src="@/assets/shared/icon-hamburger.svg" alt="Open Menu" class="h-6 w-6" />
         </button>
       </div>
 
       <!-- Navigation-links for desktop -->
       <div
-        class="hidden md:flex md:items-center md:gap-8 bg-white/5 backdrop-blur-lg px-8 py-4 rounded-lg"
+        class="hidden md:flex md:items-center md:gap-8 bg-white/5 backdrop-blur-lg px-8 py-4 rounded-lg md:py-[20px] md:mr-[-4rem] md:mt-[-2rem] lg:mr-[-3rem] lg:mt-[-1rem] lg:px-16 lg:py-6 lg:rounded-none"
       >
         <ul class="flex gap-8">
           <li v-for="link in navLinks" :key="link.name">
             <router-link
               :to="link.path"
               :class="[
-                'flex items-center gap-2 py-2 px-4 uppercase tracking-widest hover:text-white',
+                'flex items-center gap-2 py-2 px-4 uppercase tracking-widest hover:text-white hover:border-b-2 hover:border-white transition-colors duration-300 ease-in-out lg:text-sm md:text-base',
                 route.name === link.name
                   ? 'text-white font-bold border-b-2 border-white'
                   : 'text-gray-400',
@@ -79,7 +83,7 @@ function toggleMenu() {
           <router-link
             :to="link.path"
             :class="[
-              'flex items-center gap-4 text-lg font-normal uppercase tracking-widest',
+              'flex items-center gap-4 text-lg font-normal uppercase tracking-widest hover:text-white transition-colors duration-300 ease-in-out hover:border-b-2 hover:border-white text-sm',
               route.name === link.name ? 'text-white font-bold' : 'text-white/80',
             ]"
             @click="isOpen = false"
@@ -92,3 +96,5 @@ function toggleMenu() {
     </div>
   </nav>
 </template>
+
+margin-right: -4rem; padding-top: 20px; padding-bottom: 20px; margin-top: -2rem;

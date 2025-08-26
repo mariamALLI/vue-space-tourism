@@ -1,10 +1,7 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  font-family: 'Barlow', sans-serif;
 }
 
 @theme {
@@ -14,31 +11,83 @@
   --color-dark_navy: #0c0e18;
   --color-line_color: #4e5a73;
   --color-light_white: #ffffff0d;
-  --color-h1_clr: #d2d8f9;
+  --color-pale_purple: #d2d8f9;
 
-  --font-family-barlow: 'Barlow', sans-serif;
-  --font-family-barlow_c: 'Barlow Condensed', sans-serif;
-  --font-family-belle: 'Bellefair', sans-serif;
+  --font-barlow: 'Barlow', sans-serif;
+  --font-barlow_c: 'Barlow Condensed', sans-serif;
+  --font-belle: 'Bellefair', sans-serif;
 
-  --bg-desktop-hero: url('/src/assets/background-home-desktop.jpg');
-  --bg-mobile-hero: url('/src/assets/background-home-mobile.jpg');
-  --bg-tablet-hero: url('/src/assets/background-home-tablet.jpg');
+  /* Aliases in kebab-case so utilities like font-... and text-... are generated predictably */
+  --font-barlow-condensed: var(--font-barlow_c);
 
-  --bg-desktop-destination: url('/src/assets/background-destination-desktop.jpg');
-  --bg-mobile-destination: url('/src/assets/background-destination-mobile.jpg');
-  --bg-tablet-destination: url('/src/assets/background-destination-tablet.jpg');
+  --background-image-desktop-hero: url('/home/background-home-desktop.jpg');
+  --background-image-mobile-hero: url('/home/background-home-mobile.jpg');
+  --background-image-tablet-hero: url('/home/background-home-tablet.jpg');
 
-  --bg-desktop-technology: url('/src/assets/background-technology-desktop.jpg');
-  --bg-mobile-technology: url('/src/assets/background-technology-mobile.jpg');
-  --bg-tablet-technology: url('/src/assets/background-technology-tablet.jpg');
+  --background-image-desktop-destination: url('/destinationBg/background-destination-desktop.jpg');
+  --background-image-mobile-destination: url('/destinationBg/background-destination-mobile.jpg');
+  --background-image-tablet-destination: url('/destinationBg/background-destination-tablet.jpg');
 
-  --bg-desktop-crew: url('/src/assets/background-crew-desktop.jpg');
-  --bg-mobile-crew: url('/src/assets/background-crew-mobile.jpg');
-  --bg-tablet-crew: url('/src/assets/background-crew-tablet.jpg');
+  --background-image-desktop-technology: url('/technology/background-technology-desktop.jpg');
+  --background-image-mobile-technology: url('/technology/background-technology-mobile.jpg');
+  --background-image-tablet-technology: url('/technology/background-technology-tablet.jpg');
+
+  --background-image-desktop-crew: url('/crew/background-crew-desktop.jpg');
+  --background-image-mobile-crew: url('/crew/background-crew-mobile.jpg');
+  --background-image-tablet-crew: url('/crew/background-crew-tablet.jpg');
 }
 
+@layer utilities {
+  .bg-hero {
+    background-image: theme(--background-image-mobile-hero);
+  }
+
+  .bg-destination {
+    background-image: theme(--background-image-mobile-destination);
+  }
+
+  .bg-technology {
+    background-image: theme(--background-image-mobile-technology);
+  }
+
+  .bg-crew {
+    background-image: theme(--background-image-mobile-crew);
+  }
+
+  @media (min-width: 768px) {
+    .bg-hero {
+      background-image: theme(--background-image-tablet-hero);
+    }
+    .bg-destination {
+      background-image: theme(--background-image-tablet-destination);
+    }
+    .bg-technology {
+      background-image: theme(--background-image-tablet-technology);
+    }
+    .bg-crew {
+      background-image: theme(--background-image-tablet-crew);
+    }
+  }
+  @media (min-width: 1440px) {
+    .bg-hero {
+      background-image: theme(--background-image-desktop-hero);
+    }
+    .bg-destination {
+      background-image: theme(--background-image-desktop-destination);
+    }
+    .bg-technology {
+      background-image: theme(--background-image-desktop-technology);
+    }
+    .bg-crew {
+      background-image: theme(--background-image-desktop-crew);
+    }
+  }
+}
 
 @layer base {
+  body {
+    font-family: theme(--font-barlow);
+  }
   .container {
     max-width: 80rem; /* equivalent to max-w-7xl */
     margin-left: auto; /* mx-auto */
