@@ -25,7 +25,7 @@ function toggleMenu() {
       <!-- logo -->
       <router-link to="/">
         <img
-          src="@/assets/shared/logo.svg"
+          src="/logo.svg"
           alt="Logo"
           class="h-8 w-8 md:h-12 md:w-12 lg:h-16 lg:w-16 md:mt-[-1rem] lg:mt-[-1.25rem]"
         />
