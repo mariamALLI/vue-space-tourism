@@ -12,6 +12,7 @@
   --color-line_color: #4e5a73;
   --color-light_white: #ffffff0d;
   --color-pale_purple: #d2d8f9;
+  --color-darkGray: #979797;
 
   --font-barlow: 'Barlow', sans-serif;
   --font-barlow_c: 'Barlow Condensed', sans-serif;
@@ -87,6 +88,7 @@
 @layer base {
   body {
     font-family: theme(--font-barlow);
+    min-height: 100vh;
   }
   .container {
     max-width: 80rem; /* equivalent to max-w-7xl */
