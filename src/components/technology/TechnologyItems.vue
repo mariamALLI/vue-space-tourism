@@ -31,7 +31,7 @@ const vehicle = computed(() => data.value?.technology[selectedVehicle.value] ?? 
     <div
       class="absolute inset-0 bg-technology bg-cover bg-no-repeat bg-center bg-fixed min-[768px]:bg-technology min-[1440px]:bg-technology"
     ></div>
-    <div class="relative pt-[7.5rem] min-h-screen px-4 md:px-0">
+    <div class="relative pt-[7.5rem] min-h-screen md:px-0">
       <h1
         class="translate-x-[20%] md:translate-x-0 font-barlow_c absolute top-24 left-15 md:top-32 md:left-12 lg:top-40 lg:left-20 uppercase tracking-widest text-white text-lg md:text-2xl lg:text-3xl"
       >
@@ -39,10 +39,14 @@ const vehicle = computed(() => data.value?.technology[selectedVehicle.value] ?? 
         Space launch 101
       </h1>
 
-      <div class="flex flex-col flex-col-reverse md:items-center lg:flex-row lg:justify-between lg:translate-y-[5%] lg:translate-x-[10%]">
+      <div
+        class="flex flex-col flex-col-reverse md:items-center lg:flex-row lg:justify-between lg:translate-y-[5%] lg:translate-x-[10%]"
+      >
         <div class="vehicle-details_buttons mt-[2.5rem] lg:flex lg:gap-10">
           <!-- Vehicle Selection Buttons -->
-          <div class="flex justify-center lg:justify-start gap-4 mb-8 mt-[3.5rem] lg:flex-col lg:gap-8 lg:mb-[2rem] lg:mt-[1rem]">
+          <div
+            class="flex justify-center lg:justify-start gap-4 mb-8 mt-[1.5rem] lg:flex-col lg:gap-8 lg:mb-[2rem] lg:mt-[1rem]"
+          >
             <button
               @click="selectedVehicle = 0"
               :class="[
@@ -90,7 +94,7 @@ const vehicle = computed(() => data.value?.technology[selectedVehicle.value] ?? 
                 {{ vehicle && vehicle.name.toUpperCase() }}
               </h3>
               <p
-                class="font-barlow text-[0.9rem] md:text-base font-thin mt-[-1rem] mb-[.7rem] leading-[25px] md:leading-[28px] text-pale_purple max-w-[444px] mx-auto md:mx-0 md:text-center md:text-xl md:max-w-2xl lg:max-w-4xl md:leading-[35px] lg:leading-[40px] lg:text-lg lg:text-left"
+                class="font-barlow text-[0.9rem] md:text-base font-thin mt-[-1rem] mb-[.7rem] leading-[25px] md:leading-[28px] text-pale_purple max-w-[300px] mx-auto md:mx-0 md:text-center md:text-xl md:max-w-2xl lg:max-w-4xl md:leading-[35px] lg:leading-[40px] lg:text-lg lg:text-left"
               >
                 {{ vehicle && vehicle.description }}
               </p>
@@ -98,13 +102,13 @@ const vehicle = computed(() => data.value?.technology[selectedVehicle.value] ?? 
           </div>
         </div>
         <!-- Vehicle Image -->
-        <div class="w-full mt-8 -mx-4 md:mx-0 md:w-screen">
+        <div class="w-full mt-8 -mx-4 md:mx-0 md:mt-[4rem]">
           <picture>
             <source media="(min-width: 1024px)" :srcset="vehicle?.images.portrait" />
             <img
               :src="vehicle?.images.landscape"
               :alt="vehicle?.name"
-              class="w-full h-[200px] md:mt-[4rem] object-cover md:h-[400px] lg:h-[550px] md:object-contain lg:translate-y-[-10%] lg:translate-x-[5%]"
+              class="w-full h-[200px] object-cover md:h-[400px] lg:h-[550px] md:object-contain lg:translate-y-[-10%] lg:translate-x-[5%] translate-x-[4.5%] md:translate-x-0"
             />
           </picture>
         </div>
