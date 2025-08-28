@@ -64,6 +64,7 @@ function toggleMenu() {
                   : 'text-gray-400',
               ]"
               @click="isOpen = false"
+              active-class="text-white font-bold border-b-2 border-white"
             >
               <span>{{ link.label }}</span>
               {{ link.name }}
