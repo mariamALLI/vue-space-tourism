@@ -98,4 +98,5 @@ function toggleMenu() {
   </nav>
 </template>
 
-margin-right: -4rem; padding-top: 20px; padding-bottom: 20px; margin-top: -2rem;
+
+

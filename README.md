@@ -1,39 +1,79 @@
-# vue-space-tourism
+# 🚀 Vue Space Tourism
 
-This template should help get you started developing with Vue 3 in Vite.
+A visually stunning, responsive web app for space tourism, built with Vue 3 and Vite. Explore destinations, crew, and technology in an immersive experience inspired by the Frontend Mentor Space Tourism challenge.
 
-## Recommended IDE Setup
+## Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- 🌑 Multi-page navigation: Home, Destination, Crew, Technology
+- 🖼️ Animated transitions using @vueuse/motion
+- 📱 Responsive design for mobile, tablet, and desktop
+- 🧑‍🚀 Dynamic data for destinations, crew, and technology
+- 🧭 Modern navigation with active/hover states
+- 🎨 Custom styles with Tailwind CSS
 
-## Type Support for `.vue` Imports in TS
+## Getting Started
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### Prerequisites
 
-## Customize configuration
+- Node.js (v18+ recommended)
+- pnpm (or npm/yarn)
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+### Installation
 
-## Project Setup
-
-```sh
+```bash
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+### Running the App
 
-```sh
+```bash
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Visit `http://localhost:5173` in your browser.
 
-```sh
+### Build for Production
+
+```bash
 pnpm build
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## Project Structure
 
-```sh
-pnpm lint
+```text
+vue-space-tourism/
+├── public/           # Static assets (images, data)
+├── src/
+│   ├── assets/       # Images, icons, design files
+│   ├── components/   # Vue components (destination, crew, technology)
+│   ├── hooks/        # Custom composables
+│   ├── router/       # Vue Router setup
+│   ├── App.vue       # Root component
+│   ├── main.ts       # App entry point
+│   └── index.css     # Global styles
+├── package.json
+├── vite.config.ts
+└── README.md
 ```
+
+## Technologies Used
+
+- [Vue 3](https://vuejs.org/)
+- [Vite](https://vitejs.dev/)
+- [Vue Router](https://router.vuejs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [@vueuse/motion](https://motion.vueuse.org/) (animations)
+
+## Customization
+
+- Update images and data in `public/` and `src/assets/`
+- Modify styles in `src/index.css` or Tailwind config
+- Add new pages/components in `src/components/`
+
+## Credits
+
+- Design inspired by [Frontend Mentor - Space Tourism](https://www.frontendmentor.io/challenges/space-tourism-multi-page-website-gRWj1Zdz9)
+
+## License
+
+This project is open source and available under the MIT License.
