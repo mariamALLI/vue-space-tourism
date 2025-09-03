@@ -33,7 +33,7 @@ function toggleMenu() {
 
       <!-- line for desktop -->
       <div
-        class="hidden lg:block flex-1 max-w-[600px] h-[1px] bg-white/20 ml-8 -mr-10 z-[50] mt-[-0.5rem]"
+        class="hidden lg:block flex-1 max-w-[600px] h-[1px] bg-white/20 ml-8 -mr-15 z-[50] mt-[-0.5rem]"
       ></div>
 
       <!-- hamburger menu for mobile -->
@@ -51,22 +51,24 @@ function toggleMenu() {
 
       <!-- Navigation-links for desktop -->
       <div
-        class="hidden md:flex md:items-center md:gap-8 bg-white/5 backdrop-blur-lg px-8 py-4 rounded-lg md:py-[20px] md:mr-[-4rem] md:mt-[-2rem] lg:mr-[-3rem] lg:mt-[-1rem] lg:px-16 lg:py-6 lg:rounded-none"
+        class="hidden md:flex md:items-center md:gap-8 bg-white/5 backdrop-blur-lg px-8 py-4 rounded-lg md:py-[20px] md:mr-[-4rem] md:mt-[-2rem] lg:mr-[-3rem] lg:mt-[-1rem] lg:px-24 lg:py-6 lg:rounded-none"
       >
         <ul class="flex gap-8">
           <li v-for="link in navLinks" :key="link.name">
             <router-link
               :to="link.path"
               :class="[
-                'flex items-center gap-2 py-2 px-4 uppercase tracking-widest hover:text-white hover:border-b-2 hover:border-white transition-colors duration-300 ease-in-out lg:text-sm md:text-base',
+                'navlink lg:text-sm md:text-base',
                 route.name === link.name
                   ? 'text-white font-bold border-b-2 border-white'
                   : 'text-gray-400',
               ]"
               @click="isOpen = false"
-              active-class="text-white font-bold border-b-2 border-white"
+              active-class="is-active"
+              :aria-label="link.name"
+              :aria-current="route.name === link.name ? 'page' : 'false'"
             >
-              <span>{{ link.label }}</span>
+              <span class="font-bold text-white">{{ link.label }}</span>
               {{ link.name }}
             </router-link>
           </li>
@@ -98,5 +100,48 @@ function toggleMenu() {
   </nav>
 </template>
 
+<style scoped>
+.navlink {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition:
+    color 0.3s ease-in-out,
+    border-bottom 0.3s ease-in-out;
+  position: relative;
+  color: white;
+}
 
+.navlink:hover {
+  color: white;
+}
 
+.navlink::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1.7rem;
+  height: 2px;
+  width: 100%;
+  background: white;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+  transform-origin: left;
+}
+
+.navlink:hover::after {
+  transform: scaleX(1);
+}
+
+.navlink.is-active {
+  color: white;
+  font-weight: bold;
+}
+
+.navlink.is-active::after {
+  transform: scaleX(1);
+}
+</style>
